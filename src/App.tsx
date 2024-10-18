@@ -1,17 +1,22 @@
 import { useState } from 'react'
-import './App.css'
+// import './App.css'
 import MyInput from './components/formulaire'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const inputLabel =[
+    {name:'username',type:'text', label:'Nom d\'utilisateur', placeholder:"Entrez nom ",required:false},
+    {name:'emai',type:'email', label:'Adresse e-mail', placeholder:"Entrez mail",required:false},
+    {name:'password',type:'password', label:'Mot de passe', placeholder:"Entrez votre mot de passe",required:false}
+  ]
 
+  const FormInputValeur = (data:any)=>{
+    
+    console.log("Donnée soumise : ",data)
+  }
+  
   return (
     <>
-    <form action="">
-      {/* <input type="text" name="name" placeholder="Enter your name"/> */}
-      <MyInput name="" placeholder="Entrez ton nom" type="text" label="Nom"/>
-    </form>
-      
+      <MyInput inputLabel={inputLabel} onSubmit = {FormInputValeur} />
     </>
   )
 }

@@ -1,21 +1,46 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-function MyInput({type,name,placeholder,label}) {
-  const [value, setValue] = useState('');
+function MyInput({ inputLabel, onSubmit }: any) {
+  const [value, setValue] = useState("");
+  const [formData, setFormData] = useState(
+    inputLabel.reduce((acc, input)=>{
+        acc[input.name] = "";
+        return acc;
+    },{})
+  );
+
+  const handleChangeValue = (e:any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubit = (e: any) => {
+    e.preventDefault();
+    onSubmit(formData)
+  };
 
   return (
-   <>
-   <div>
-   <label htmlFor={name}>{label}</label>
-   <input
-      type={type}
-      value={value}
-      name={name}
-      placeholder={placeholder}
-      onChange={(e) => setValue(e.target.value)}
-    />
-   </div>
-   </>
+    <>
+      <form action="" onSubmit={handleSubit}>
+        {inputLabel.map((input: any, index: any) => (
+          <div key={index}>
+            <label htmlFor={input.label}>{input.label}</label>
+            <input
+              type={input.type}
+              value={input.value}
+              name={input.name}
+              placeholder={input.placeholder}
+              required={input.required}
+              onChange={handleChangeValue}
+            />
+          </div>
+        ))}
+        <button type="submite">Envoyer</button>
+      </form>
+    </>
   );
 }
 
