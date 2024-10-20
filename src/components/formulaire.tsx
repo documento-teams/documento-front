@@ -1,9 +1,8 @@
 import { useState } from "react";
 
 function MyInput({ inputLabel, onSubmit }: any) {
-  const [value, setValue] = useState("");
   const [formData, setFormData] = useState(
-    inputLabel.reduce((acc, input)=>{
+    inputLabel.reduce((acc:any, input:any)=>{
         acc[input.name] = "";
         return acc;
     },{})
