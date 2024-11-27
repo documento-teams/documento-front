@@ -1,9 +1,7 @@
-import React from 'react';
-
-function About() {
+function Register() {
     return (
       <>
-        <h1>À propos de moi</h1>
+        <h1>Register</h1>
         <p>
           Passionné de développement web, je crée des applications web performantes et esthétiques. 
           Mon objectif est de fournir des expériences utilisateur exceptionnelles grâce à un code propre et optimisé.            
@@ -12,4 +10,4 @@ function About() {
     );
   };
   
-  export default About;
+  export default Register;
