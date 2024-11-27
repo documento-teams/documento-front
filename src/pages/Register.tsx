@@ -1,7 +1,7 @@
-function User() {
+function Register() {
     return (
       <>
-        <h1>User</h1>
+        <h1>Register</h1>
         <p>
           Passionné de développement web, je crée des applications web performantes et esthétiques. 
           Mon objectif est de fournir des expériences utilisateur exceptionnelles grâce à un code propre et optimisé.            
@@ -10,4 +10,4 @@ function User() {
     );
   };
   
-  export default User;
+  export default Register;

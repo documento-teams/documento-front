@@ -1,7 +1,7 @@
 import "./App.css";
 import { Suspense } from "react";
 
-//Routage
+//Routes
 import Routes from "./config/routes";
 
 function App() {
