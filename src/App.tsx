@@ -10,7 +10,6 @@ function App() {
   ]
 
   const FormInputValeur = (data:any)=>{
-    
     console.log("Donnée soumise : ",data)
   }
   
