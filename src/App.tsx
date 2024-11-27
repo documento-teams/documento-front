@@ -1,22 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import './App.css'
+import "./App.css";
+import { useTranslation } from "react-i18next"; // Importation du hook de traduction
+import "./i18n";
+import { Suspense } from "react";
 
 function App() {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng); // Changer la langue
+  };
 
   return (
-    <ThemeProvider>
-      <Router>
-          <Routes>
-            <Route exact path="/" element={<Header />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects3 />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-      </Router>
-    </ThemeProvider>
-  )
+    <div>
+      <h1>{t("main.welcome")}</h1>
+      <p>{t("main.description")}</p>
+      <button onClick={() => changeLanguage("en")}>English</button>
+      <button onClick={() => changeLanguage("fr")}>Français</button>
+    </div>
+  );
 }
-
-export default App
+export default function WrappedApp() {
+  return (
+    <Suspense fallback="...loading">
+      <App />
+    </Suspense>
+  );
+}
