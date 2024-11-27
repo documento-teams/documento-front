@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import User from "../pages/User";
 import Home from "../pages/Home";
 
-export default function Routage() {
+export default function RouteComponent() {
   return (
     <Router>
       <Routes>

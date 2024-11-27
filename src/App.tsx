@@ -2,11 +2,11 @@ import "./App.css";
 import { Suspense } from "react";
 
 //Routage
-import Routage from "./config/routes";
+import Routes from "./config/routes";
 
 function App() {
   return (
-    <Routage />
+    <Routes />
   );
 }
 export function WrappedApp() {
