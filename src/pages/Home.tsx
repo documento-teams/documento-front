@@ -11,6 +11,7 @@ export default function Home() {
       <div>
         <h1>{t("main.welcome")}</h1>
         <p>{t("main.description")}</p>
+        <p className="text-3xl bg-red-600">blabla</p>
         <button onClick={() => changeLanguage("en")}>English</button>
         <button onClick={() => changeLanguage("fr")}>Français</button>
       </div>
